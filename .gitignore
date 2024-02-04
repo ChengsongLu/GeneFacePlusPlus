@@ -210,3 +210,6 @@ deep_3drecon/BFM/facemodel_info.mat
 deep_3drecon/BFM/index_mp468_from_mesh35709.npy
 deep_3drecon/BFM/mediapipe_in_bfm53201.npy
 deep_3drecon/BFM/std_exp.txt
+
+/egs/datasets/
+!/egs/datasets/May
