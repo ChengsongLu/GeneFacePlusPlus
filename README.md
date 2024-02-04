@@ -2,13 +2,16 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-%3CCOLOR%3E.svg)](https://arxiv.org/abs/2305.00787)| [![GitHub Stars](https://img.shields.io/github/stars/yerfor/GeneFacePlusPlus)](https://github.com/yerfor/GeneFacePlusPlus) | [中文文档](./README-zh.md)
 
-This is the official implementation of GeneFace++ [Paper](https://arxiv.org/abs/2301.13430) with Pytorch，which enables high lip-sync, high video-reality and high system-efficiency 3D talking face generation. You can visit our [Demo Page](https://genefaceplusplus.github.io/) to watch demo videos and learn more details.
+This is the official implementation of GeneFace++ [Paper](https://arxiv.org/abs/2301.13430) with Pytorch, which enables high lip-sync, high video-reality and high system-efficiency 3D talking face generation. You can visit our [Demo Page](https://genefaceplusplus.github.io/) to watch demo videos and learn more details.
 
 <p align="center">
     <br>
     <img src="assets/geneface++.png" width="100%"/>
     <br>
 </p>
+
+## You may also interested in 
+- We release Real3D-portrait (ICLR 2024 Spotlight), ([https://github.com/yerfor/Real3DPortrait](https://github.com/yerfor/Real3DPortrait)), a NeRF-based one-shot talking face system. Only upload one image and enjoy realistic talking face!
 
 ## Quick Start!
 We provide a guide for a quick start in GeneFace++.
