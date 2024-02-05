@@ -2,7 +2,7 @@
 
 export PYTHONPATH=./
 export CUDA_VISIBLE_DEVICES=0
-VIDEO_ID='demo'  # path: ./data/raw/videos/${VIDEO_ID}.mp4 (avoid using full numbers as file name)
+VIDEO_ID='May'  # path: ./data/raw/videos/${VIDEO_ID}.mp4 (avoid using full numbers as file name)
 AUDIO_ID='demo'  # path: ./data/raw/val_wavs/${AUDIO_ID}.wav
 
 start_step="${1:-1}"
@@ -58,8 +58,8 @@ if [[ ${start_step} -le 2 ]] && [[ ${stop_step} -ge 2 ]]; then
 
     echo "-------------------- 2.1. Train the Head NeRF --------------------"
     python tasks/run.py \
-    --config="egs/datasets/${VIDEO_ID}/lm3d_radnerf_sr.yaml" \
-    --exp_name="motion2video_nerf/${VIDEO_ID}_head" \
+    --config="./egs/datasets/${VIDEO_ID}/lm3d_radnerf_sr.yaml" \
+    --exp_name="./motion2video_nerf/${VIDEO_ID}_head" \
     --reset
 
     echo "-------------------- 2.2. Train the Torso NeRF --------------------"
@@ -74,8 +74,7 @@ fi
 if [[ ${start_step} -le 3 ]] && [[ ${stop_step} -ge 3 ]]; then
     echo "==================== Inference ===================="
     python inference/genefacepp_infer.py \
-    --a2m_ckpt=checkpoints/audio2motion_vae \
-    --head_ckpt= "" \
+    --a2m_ckpt="checkpoints/audio2motion_vae" \
     --torso_ckpt="checkpoints/motion2video_nerf/${VIDEO_ID}_torso" \
     --drv_aud="data/raw/val_wavs/${AUDIO_ID}.wav" \
     --out_name="${VIDEO_ID}_output.mp4"
