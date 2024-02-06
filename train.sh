@@ -39,9 +39,8 @@ echo "stop_step: ${stop_step}"
 # (VGG)
 # /home/lcs/.cache/torch/hub/checkpoints/vgg19-dcbb9e9d.pth
 # /home/lcs/.cache/torch/hub/checkpoints/vgg_face_dag.pth
-# (HuBERT)
+# (HuBERT_Wav2Vec2)
 # /home/lcs/.cache/huggingface/hub/models--facebook--hubert-large-ls960-ft/snapshots/ece5fabbf034c1073acae96d5401b25be96709d8
-#
 
 
 if [[ ${start_step} -le 1 ]] && [[ ${stop_step} -ge 1 ]]; then
