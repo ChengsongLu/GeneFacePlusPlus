@@ -5,8 +5,8 @@ export CUDA_VISIBLE_DEVICES=0
 VIDEO_ID='demo'  # path: ./data/raw/videos/${VIDEO_ID}.mp4 (avoid using full numbers as file name)
 AUDIO_ID='demo'  # path: ./data/raw/val_wavs/${AUDIO_ID}.wav
 
-lpips_start_iters=140_000
-max_updates=150_000
+lpips_start_iters=200_000
+max_updates=250_000
 
 start_step="${1:-1}"
 stop_step="${2:-3}"
