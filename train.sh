@@ -1,17 +1,34 @@
 #!/bin/bash
 
+# Parameters
+while getopts g:v:s:e: option; do
+    case "${option}" in
+        g) gpu=${OPTARG};;
+        v) video=${OPTARG};;
+        s) start=${OPTARG};;
+        e) end=${OPTARG};;
+    esac
+done
+
+# Configration
 export PYTHONPATH=./
-export CUDA_VISIBLE_DEVICES=0
-VIDEO_ID="$1"  # path: ./data/raw/videos/${VIDEO_ID}.mp4 (avoid using full numbers as file name)
+export CUDA_VISIBLE_DEVICES="${gpu:-0}"
+VIDEO_ID=${video:-"May"}  # path: ./data/raw/videos/${VIDEO_ID}.mp4 (avoid using full numbers as file name)
 AUDIO_ID="demo"  # path: ./data/raw/val_wavs/${AUDIO_ID}.wav
 
 lpips_start_iters=200_000
 max_updates=250_000
 
-start_step="${2:-1}"
-stop_step="${3:-3}"
+start_step="${start:-1}"
+stop_step="${end:-3}"
 
-# generated dir:
+echo "CUDA: ${CUDA_VISIBLE_DEVICES}"
+echo "Video: ${VIDEO_ID}"
+echo "Audio: ${AUDIO_ID}"
+echo "start_step: ${start_step}"
+echo "stop_step: ${stop_step}"
+
+# Generated dir:
 # ./egs/datasets/${VIDEO_ID}
 # ./data/binary/videos/${VIDEO_ID}
 # ./data/processed/videos/${VIDEO_ID}
