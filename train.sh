@@ -35,6 +35,14 @@ echo "stop_step: ${stop_step}"
 # ./checkpoints/motion2video_nerf/${VIDEO_ID}_head
 # ./checkpoints/motion2video_nerf/${VIDEO_ID}_torso
 
+# Cache files:
+# (VGG)
+# /home/lcs/.cache/torch/hub/checkpoints/vgg19-dcbb9e9d.pth
+# /home/lcs/.cache/torch/hub/checkpoints/vgg_face_dag.pth
+# (HuBERT)
+# /home/lcs/.cache/huggingface/hub/models--facebook--hubert-large-ls960-ft/snapshots/ece5fabbf034c1073acae96d5401b25be96709d8
+#
+
 
 if [[ ${start_step} -le 1 ]] && [[ ${stop_step} -ge 1 ]]; then
     echo "======================================== Data Pre-process ========================================"
