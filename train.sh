@@ -68,6 +68,7 @@ if [[ ${start_step} -le 1 ]] && [[ ${stop_step} -ge 1 ]]; then
     sed -i "s/25_0000/${max_updates}/g" "./egs/datasets/${VIDEO_ID}/lm3d_radnerf_sr.yaml"
     sed -i "s/20_0000/${lpips_start_iters}/g" "./egs/datasets/${VIDEO_ID}/lm3d_radnerf_torso_sr.yaml"
     sed -i "s/25_0000/${max_updates}/g" "./egs/datasets/${VIDEO_ID}/lm3d_radnerf_torso_sr.yaml"
+    sed -i "s/num_updates/max_updates/g" "./egs/datasets/${VIDEO_ID}/lm3d_radnerf_torso_sr.yaml"
 
     echo "---------------------------------------- 1.3. Extract audio features, such as mel, f0, hubert and esperanto ----------------------------------------"
     mkdir -p "./data/processed/videos/${VIDEO_ID}"
