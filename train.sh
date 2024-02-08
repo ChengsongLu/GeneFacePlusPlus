@@ -1,4 +1,5 @@
 #!/bin/bash
+echo $$
 
 # Parameters
 while getopts g:v:s:e: option; do
